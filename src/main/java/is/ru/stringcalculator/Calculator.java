@@ -8,14 +8,10 @@ public class Calculator
 		{
 			return 0;
 		}
-		else if(text.contains(","))
-		{
-			String numbers[] = text.split(",");
-			return sum(numbers);
-		}
 		else
 		{
-			return 1;
+			String numbers[] = text.split(",|\\n");
+			return sum(numbers);
 		}
 	}
 
@@ -33,5 +29,4 @@ public class Calculator
 		}
 		return total;
 	}
-
 }
