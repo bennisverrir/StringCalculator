@@ -37,7 +37,7 @@ public class Calculator
 		{
 			if(Integer.parseInt(number) < 0)
 			{
-				throw new IllegalArgumentException();
+				throw new IllegalArgumentException("Negatives not allowed: [" + number + "]");
 			}
 		}
 	}

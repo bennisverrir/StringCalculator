@@ -42,4 +42,16 @@ public class CalculatorTest
     {
         Calculator.add("-1,2");
     }
+    @Test
+    public void testNegativeNumberMessage()
+    {
+        try
+        {
+            Calculator.add("-1,2");
+        }
+        catch (RuntimeException exception)
+        {
+            assertEquals("Negatives not allowed: [-1]", exception.getMessage());
+        }
+    }
 }
