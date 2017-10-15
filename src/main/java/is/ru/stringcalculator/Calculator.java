@@ -14,6 +14,16 @@ public class Calculator
 		}
 		else
 		{
+			if(text.startsWith("//"))
+			{
+				String[] temp = text.split("\n", 2);
+				String delimeter = temp[0];
+				delimeter = delimeter.replace("//","");
+				String rest = temp[1];
+				String numbers[] = rest.split(delimeter);
+				check(numbers);
+				return sum(numbers);
+			}
 			String numbers[] = text.split(",|\\n");
 			check(numbers);
 			return sum(numbers);

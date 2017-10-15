@@ -67,10 +67,18 @@ public class CalculatorTest
         }
     }
 
-    //Step5
+    //Step 5
     @Test
     public void testLargerthan1k()
     {
     	assertEquals(2, Calculator.add("1001,2"));
     }
+
+    //step 6
+    @Test
+    public void testCustomDelimeter()
+    {
+    	assertEquals(3, Calculator.add("//;\n1;2"));
+    }
+
 }
