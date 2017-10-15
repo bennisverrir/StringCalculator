@@ -11,6 +11,13 @@ public class Calculator
 		else
 		{
 			String numbers[] = text.split(",|\\n");
+			for(String number : numbers)
+			{
+				if(Integer.parseInt(number) < 0)
+				{
+					throw new IllegalArgumentException();
+				}
+			}
 			return sum(numbers);
 		}
 	}
