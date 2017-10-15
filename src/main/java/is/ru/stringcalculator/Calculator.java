@@ -1,5 +1,9 @@
 package is.ru.stringcalculator;
 
+import java.util.List;
+import java.util.ArrayList;
+
+
 public class Calculator
 {
 	public static int add(String text)
@@ -33,12 +37,26 @@ public class Calculator
 
 	private static void check(String [] numbers)
 	{
-	for(String number : numbers)
+		List<Integer> negatives = new ArrayList<Integer>();
+		for(String number : numbers)
 		{
-			if(Integer.parseInt(number) < 0)
+			if(toInt(number) < 0)
 			{
-				throw new IllegalArgumentException("Negatives not allowed: [" + number + "]");
+				negatives.add(toInt(number));
 			}
+		}
+		if(negatives.size() > 0)
+		{
+			String message = "Negatives not allowed: ";
+			message += negatives.get(0);
+			if(negatives.size() > 1)
+			{
+				for(int i = 1; i < negatives.size(); i++)
+				{
+					message += ", " + negatives.get(i);
+				}
+			}
+			throw new IllegalArgumentException(message);
 		}
 	}
 }
