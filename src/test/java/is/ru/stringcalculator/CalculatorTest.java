@@ -36,7 +36,7 @@ public class CalculatorTest
 		assertEquals(6, Calculator.add("1\n2,3"));
 	}
 
-	//step 4
+	//Step 4
 	@Test(expected = IllegalArgumentException.class)
     public final void testNegativeNumber()
     {
@@ -65,5 +65,12 @@ public class CalculatorTest
         {
             assertEquals("Negatives not allowed: -4, -5", exception.getMessage());
         }
+    }
+
+    //Step5
+    @Test
+    public void testLargerthan1k()
+    {
+    	assertEquals(2, Calculator.add("1001,2"));
     }
 }
