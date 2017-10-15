@@ -11,13 +11,7 @@ public class Calculator
 		else
 		{
 			String numbers[] = text.split(",|\\n");
-			for(String number : numbers)
-			{
-				if(Integer.parseInt(number) < 0)
-				{
-					throw new IllegalArgumentException();
-				}
-			}
+			check(numbers);
 			return sum(numbers);
 		}
 	}
@@ -35,5 +29,16 @@ public class Calculator
 			total += toInt(number);
 		}
 		return total;
+	}
+
+	private static void check(String [] numbers)
+	{
+	for(String number : numbers)
+		{
+			if(Integer.parseInt(number) < 0)
+			{
+				throw new IllegalArgumentException();
+			}
+		}
 	}
 }
